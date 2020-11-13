@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import styles from './Layout.module.css'
+import styles from './Layout.module.sass'
 
 type Props = {
   children?: ReactNode
