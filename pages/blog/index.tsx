@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import styles from './styles.module.sass'
 
@@ -5,7 +6,7 @@ const BlogPage = () => (
   <Layout title="Blog | Next.js + TypeScript Example">
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Read <Link href="/blog/posts/first-post"><a>this page!</a></Link>
       </h1>
 
       <p className={styles.description}>
