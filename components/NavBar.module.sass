@@ -4,9 +4,9 @@
   justify-content: space-around
   align-items: center
   width: 100%
-  background: #ffffff
+  background: var(--background-color)
   z-index: 1000
-  outline: 1px solid #eaeaea
+  outline: 1px solid rgba(var(--font-color-rgb), 0.1)
   position: sticky
   top: 0
 
@@ -33,12 +33,12 @@
 
         a
           text-decoration: none
-          color: #696969
+          color: rgba(var(--font-color-rgb), 0.6)
           transition: color 0.2s ease
           touch-action: pan-y
 
           &:hover
-            color: #000000
+            color: var(--font-color)
 
           .logo
             height: 40px
