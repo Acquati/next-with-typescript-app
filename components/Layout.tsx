@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
-import Header from './Header'
+import NavBar from './NavBar'
 import Footer from './Footer'
 import styles from './Layout.module.sass'
 
@@ -17,8 +17,8 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header />
-    <div className={styles.pageContainer}>
+    <NavBar />
+    <div className={styles.container}>
       {children}
     </div>
     <Footer />

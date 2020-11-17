@@ -1,4 +1,4 @@
-.header
+.navBar
   display: flex
   flex-direction: column
   justify-content: space-around
@@ -6,7 +6,7 @@
   width: 100%
   background: #ffffff
   z-index: 1000
-  border-bottom: 1px solid #eaeaea
+  outline: 1px solid #eaeaea
   position: sticky
   top: 0
 
@@ -14,13 +14,13 @@
     width: 100%
     margin: 0 auto
     padding: 0 1rem
-    max-width: 1024px
+    max-width: var(--container-width)
     text-align: center
 
     nav
       position: relative
       flex: 1
-      height: 80px
+      height: var(--nav-bar-height)
       display: flex
       align-items: center
 

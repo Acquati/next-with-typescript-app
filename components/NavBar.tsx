@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from './Header.module.sass'
+import styles from './NavBar.module.sass'
 
-const Header = () => (
-  <header className={styles.header}>
+const NavBar = () => (
+  <div className={styles.navBar}>
     <div className={styles.container}>
       <nav>
         <div className={styles.links}>
@@ -30,7 +30,7 @@ const Header = () => (
         </div>
       </nav>
     </div>
-  </header>
+  </div>
 )
 
-export default Header
+export default NavBar
