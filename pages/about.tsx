@@ -1,16 +1,51 @@
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import PageLayout from '../components/PageLayout'
+import utilStyles from '../styles/utils.module.sass'
 
 const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <h1>About</h1>
-    <p>This is the about page</p>
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
+  <PageLayout siteTitle="About | Next.js + TypeScript Example">
+    <h1 className={utilStyles.title}>
+      Read <Link href="/blog/posts/first-post"><a>this page!</a></Link>
+    </h1>
+
+    <p className={utilStyles.description}>
+      Get started by editing <code>pages/index.js</code>
     </p>
-  </Layout>
+
+    <div className={utilStyles.grid}>
+      <a
+        href="https://nextjs.org/docs"
+        className={utilStyles.card}
+      >
+        <h3>Documentation &rarr;</h3>
+        <p>Find in-depth information about Next.js features and API.</p>
+      </a>
+
+      <a
+        href="https://nextjs.org/learn"
+        className={utilStyles.card}
+      >
+        <h3>Learn &rarr;</h3>
+        <p>Learn about Next.js in an interactive course with quizzes!</p>
+      </a>
+
+      <a
+        href="https://github.com/vercel/next.js/tree/master/examples"
+        className={utilStyles.card}
+      >
+        <h3>Examples &rarr;</h3>
+        <p>Discover and deploy boilerplate example Next.js projects.</p>
+      </a>
+
+      <a
+        href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        className={utilStyles.card}
+      >
+        <h3>Deploy &rarr;</h3>
+        <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
+      </a>
+    </div>
+  </PageLayout>
 )
 
 export default AboutPage

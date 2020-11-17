@@ -12,13 +12,10 @@ const NavBar = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./next-js-logo.svg" alt="Next JS Site" className={styles.logo} />
+            <img src="./images/next-js-logo.svg" alt="Next JS Site" className={styles.logo} />
           </a>
           <Link href="/">
             <a>Home</a>
-          </Link>
-          <Link href="/blog">
-            <a>Blog</a>
           </Link>
           <Link href="/about">
             <a>About</a>

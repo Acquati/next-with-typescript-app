@@ -1,19 +1,16 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import BlogLayout from '../components/BlogLayout'
+import utilStyles from '../styles/utils.module.sass'
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>{' '}
-      |{' '}
-      <Link href="/blog">
-        <a>Blog</a>
-      </Link>
-    </p>
-  </Layout>
+  <BlogLayout siteTitle="Home | Next.js + TypeScript Example" home>
+    <section className={utilStyles.headingMd}>
+      <p>[Your Self Introduction]</p>
+      <p>
+        (This is a sample website - you’ll be building a site like this on{' '}
+        <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+      </p>
+    </section>
+  </BlogLayout>
 )
 
 export default IndexPage
