@@ -1,5 +1,4 @@
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Link from 'next/link'
 import BlogLayout from '../../components/BlogLayout'
 import utilStyles from '../../styles/utils.module.sass'
 
@@ -13,7 +12,8 @@ interface PostData {
   postData: {
     id: string,
     date: string,
-    title: string
+    title: string,
+    contentHtml: string
   }
 }
 
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: Params) {
-  const postData = getPostData(params.id)
+  const postData = await getPostData(params.id)
   return {
     props: {
       postData
@@ -35,12 +35,14 @@ export async function getStaticProps({ params }: Params) {
 }
 
 const Post = ({ postData }: PostData) => (
-  <BlogLayout siteTitle={' | Next.js + TypeScript Example'}>
+  <BlogLayout siteTitle={postData.title + ' | Next.js + TypeScript Example'}>
     {postData.title}
     <br />
     {postData.id}
     <br />
     {postData.date}
+    <br />
+    <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
   </BlogLayout>
 )
 
