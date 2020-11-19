@@ -12,7 +12,7 @@ const NavBar = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./images/next-js-logo.svg" alt="Next JS Site" className={styles.logo} />
+            <img src="/images/next-js-logo.svg" alt="Next JS Site" className={styles.logo} />
           </a>
           <Link href="/">
             <a>Home</a>
