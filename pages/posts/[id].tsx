@@ -1,4 +1,5 @@
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import Date from '../../components/Date'
 import BlogLayout from '../../components/BlogLayout'
 import utilStyles from '../../styles/utils.module.sass'
 
@@ -36,13 +37,13 @@ export async function getStaticProps({ params }: Params) {
 
 const Post = ({ postData }: PostData) => (
   <BlogLayout siteTitle={postData.title + ' | Next.js + TypeScript Example'}>
-    {postData.title}
-    <br />
-    {postData.id}
-    <br />
-    {postData.date}
-    <br />
-    <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+    <article>
+      <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+      <div className={utilStyles.lightText}>
+        <Date dateString={postData.date} />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+    </article>
   </BlogLayout>
 )
 

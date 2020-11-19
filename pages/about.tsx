@@ -15,6 +15,8 @@ const AboutPage = () => (
     <div className={utilStyles.grid}>
       <a
         href="https://nextjs.org/docs"
+        target="_blank"
+        rel="noopener noreferrer"
         className={utilStyles.card}
       >
         <h3>Documentation &rarr;</h3>
@@ -23,6 +25,8 @@ const AboutPage = () => (
 
       <a
         href="https://nextjs.org/learn"
+        target="_blank"
+        rel="noopener noreferrer"
         className={utilStyles.card}
       >
         <h3>Learn &rarr;</h3>
@@ -31,6 +35,8 @@ const AboutPage = () => (
 
       <a
         href="https://github.com/vercel/next.js/tree/master/examples"
+        target="_blank"
+        rel="noopener noreferrer"
         className={utilStyles.card}
       >
         <h3>Examples &rarr;</h3>
@@ -39,6 +45,8 @@ const AboutPage = () => (
 
       <a
         href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        target="_blank"
+        rel="noopener noreferrer"
         className={utilStyles.card}
       >
         <h3>Deploy &rarr;</h3>
