@@ -6,11 +6,7 @@ import { sampleUserData } from '../../utils/sample-data'
 import PageLayout from '../../components/PageLayout'
 import List from '../../components/List'
 
-type Props = {
-  items: User[]
-}
-
-const WithStaticProps = ({ items }: Props) => (
+const WithStaticProps = ({ items }: { items: User[] }) => (
   <PageLayout siteTitle="Users List | Next.js + TypeScript Example">
     <h1>Users List</h1>
     <p>
@@ -20,7 +16,7 @@ const WithStaticProps = ({ items }: Props) => (
     <List items={items} />
     <p>
       <Link href="/">
-        <a>Go home</a>
+        <a>↩ Back to home</a>
       </Link>
     </p>
   </PageLayout>

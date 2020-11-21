@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react'
 import Layout from './Layout'
 import styles from './PageLayout.module.sass'
 
 type Props = {
-  children?: ReactNode
+  children: React.ReactNode
   siteTitle?: string
 }
 

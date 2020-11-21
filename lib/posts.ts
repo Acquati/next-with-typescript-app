@@ -4,18 +4,12 @@ import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
 
-type AllPostsData = {
-  id: string,
-  date: string,
-  title: string
-}[]
-
 const postsDirectory = path.join(process.cwd(), 'posts')
 
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData: AllPostsData = fileNames.map(fileName => {
+  const allPostsData = fileNames.map(fileName => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
@@ -25,16 +19,17 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
-    const date = matterResult.data.date
-    const title = matterResult.data.title
 
     // Combine the data with the id
     return {
       id,
-      date,
-      title
+      ...(matterResult.data as {
+        date: string
+        title: string
+      })
     }
   })
+
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
@@ -74,6 +69,6 @@ export async function getPostData(id: string) {
   return {
     id,
     contentHtml,
-    ...matterResult.data
+    ...(matterResult.data as { date: string; title: string })
   }
 }

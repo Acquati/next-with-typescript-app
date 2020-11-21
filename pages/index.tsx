@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/Date'
@@ -18,7 +19,7 @@ interface AllPostsData {
   }[]
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
   return {
     props: {

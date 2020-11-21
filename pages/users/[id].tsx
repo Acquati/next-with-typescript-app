@@ -1,13 +1,12 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
-
 import { User } from '../../interfaces/User'
 import { sampleUserData } from '../../utils/sample-data'
 import PageLayout from '../../components/PageLayout'
 import ListDetail from '../../components/ListDetail'
 
 type Props = {
-  item?: User
-  errors?: string
+  item: User
+  errors: string
 }
 
 const StaticPropsDetail = ({ item, errors }: Props) => {

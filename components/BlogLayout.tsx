@@ -1,16 +1,15 @@
-import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Layout from './Layout'
 import styles from './BlogLayout.module.sass'
 import utilStyles from '../styles/utils.module.sass'
 
 type Props = {
-  children?: ReactNode
+  children: React.ReactNode
   siteTitle?: string
   home?: boolean
 }
 
-const name = 'Your Name'
+const name = '[Your Name]'
 
 const BlogLayout = ({ children, siteTitle = 'Next.js + TypeScript Example', home }: Props) => (
   <Layout siteTitle={siteTitle}>
@@ -48,7 +47,7 @@ const BlogLayout = ({ children, siteTitle = 'Next.js + TypeScript Example', home
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a>↩ Back to home</a>
           </Link>
         </div>
       )}
